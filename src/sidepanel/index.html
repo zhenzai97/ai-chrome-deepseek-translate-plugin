@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文章翻译</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <button id="open-settings" class="link-btn" type="button">设置</button>
+        <label class="lang-select">
+          <span>目标语言</span>
+          <select id="target-lang"></select>
+        </label>
+      </header>
+
+      <div id="key-banner" class="banner hidden">
+        请先配置 DeepSeek API Key
+        <button id="banner-settings" class="link-btn" type="button">去设置</button>
+      </div>
+
+      <section class="actions">
+        <button id="translate-btn" class="primary-btn" type="button">翻译全文</button>
+        <p id="status-text" class="status-text">选择文章页后点击翻译</p>
+        <div id="progress-bar" class="progress hidden">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </section>
+
+      <section id="translation-panel" class="translation-panel">
+        <p class="empty-state">译文将显示在这里</p>
+      </section>
+
+      <footer class="download-bar">
+        <div class="format-group">
+          <label><input type="radio" name="format" value="markdown" checked /> Markdown</label>
+          <label><input type="radio" name="format" value="pdf" /> PDF</label>
+        </div>
+        <button id="download-btn" class="secondary-btn" type="button" disabled>下载</button>
+      </footer>
+    </div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

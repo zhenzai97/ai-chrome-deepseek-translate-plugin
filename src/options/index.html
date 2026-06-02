@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeepSeek 翻译设置</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>插件设置</h1>
+      <p class="desc">配置 DeepSeek API 与默认翻译语言。</p>
+
+      <form id="settings-form">
+        <label class="field">
+          <span>DeepSeek API Key</span>
+          <input id="api-key" type="password" placeholder="sk-..." autocomplete="off" />
+          <small id="masked-key" class="hint"></small>
+        </label>
+
+        <label class="field">
+          <span>默认目标语言</span>
+          <select id="default-target-lang"></select>
+        </label>
+
+        <label class="field">
+          <span>源语言</span>
+          <select id="source-lang"></select>
+        </label>
+
+        <div class="actions">
+          <button type="submit" class="primary-btn">保存设置</button>
+          <button id="clear-btn" type="button" class="secondary-btn">清除配置</button>
+        </div>
+      </form>
+
+      <section class="privacy">
+        <h2>隐私说明</h2>
+        <p>
+          翻译时，插件会从当前页面提取文章正文并发送至 DeepSeek API 进行翻译。
+          译文仅保存在当前浏览器会话中，不会上传到其他服务器，也不会保存翻译历史记录。
+        </p>
+      </section>
+
+      <p id="status" class="status"></p>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
